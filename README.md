@@ -13,3 +13,9 @@ Este proyecto consiste en un sistema Back-End desarrollado con Django y PostgreS
 ---
 
 ## Instrucciones de Instalación
+1. Clonar el repositorio
+   ```bash
+    git clone https://github.com/rjdrk/python_angular_test.git
+    cd python_angular_test/back-end
+2. Crear y activar un entorno virtual
+    

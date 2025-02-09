@@ -1,8 +1,10 @@
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.views import APIView
 from .models import Alumnos
 from .serializers import AlumnoSerializer
-from rest_framework.permissions import AllowAny
 
 # Create your views here.
 
@@ -12,12 +14,15 @@ class CreateViewAlumno(generics.CreateAPIView):
     permission_classes = [AllowAny]
 
 class ListByGradeViewAlumno(generics.ListAPIView):
-    serializer_class = AlumnoSerializer
     permission_classes = [AllowAny]
 
-    def get_queryset(self):
-        grado = self.kwargs['grado']
-        return Alumnos.objects.filter(grado=grado)
+    def get(self, request, grado):
+        alumnos = Alumnos.objects.filter(grado=grado)
+        serializer = AlumnoSerializer(alumnos, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def options(self, request, grado):
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 

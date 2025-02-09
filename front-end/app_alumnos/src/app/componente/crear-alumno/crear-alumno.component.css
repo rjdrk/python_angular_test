@@ -1,0 +1,8 @@
+input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+select:invalid {
+    color: #999;
+}

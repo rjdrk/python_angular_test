@@ -16,6 +16,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+from corsheaders.defaults import default_headers
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,6 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -144,5 +148,23 @@ REST_FRAMEWORK = {
 }
 
 # configuuracion de API
-API_BASE_URL = os.getenv('API_BASE_URL', 'http://localhost.com')
+API_BASE_URL = os.getenv('API_BASE_URL', 'http://localhost:8000')
 API_KEY = os.getenv('API_KEY')
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+]
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'API-KEY',
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'OPTIONS',
+    'PUT',
+    'DELETE',
+]
+
+CORS_ALLOW_ALL_ORIGINS = True

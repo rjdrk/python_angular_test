@@ -8,7 +8,7 @@ Este proyecto consiste en un sistema Back-End desarrollado con Django y PostgreS
 - **Back-End:** Django REST Framework
 - **Front-End:** Angular 17 + Bootstrap
 - **Base de Datos:** PostgreSQL
-- **Seguridad:** Autenticación JWT
+- **Seguridad:** Autenticación Token
 
 ---
 
@@ -71,7 +71,7 @@ Este proyecto consiste en un sistema Back-End desarrollado con Django y PostgreS
 ## Uso de la API
 Endpoints Disponibles
 
-1. Crear AlumnoPOST: /crear-alumno/Cuerpo de la solicitud:
+1. Crear Alumno POST: /crear-alumno/Cuerpo de la solicitud:
 
     ```bash
     {
@@ -97,4 +97,6 @@ Endpoints Disponibles
 
 **Headers:**
     API-KEY: tu_api_key_secreta
+
+## Instrucciones de Instalación Backend
 

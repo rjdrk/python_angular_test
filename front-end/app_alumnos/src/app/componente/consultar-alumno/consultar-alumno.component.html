@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h2>Consultar Alumnos</h2>
+    <br />
+    <div class="form-group">
+      <label for="grado">Grado</label>
+      <select class="form-select" id="grado" [(ngModel)]="grado" (change)="consultarAlumnos()">
+            <option value="Primero">Primero</option>
+            <option value="Segundo">Segundo</option>
+            <option value="Tercero">Tercero</option>
+            <option value="Cuarto">Cuarto</option>
+            <option value="Quinto">Quinto</option>
+            <option value="Sexto">Sexto</option>
+      </select>
+    </div>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre Alumno</th>
+                <th>Fecha Nacimiento</th>
+                <th>Grado</th>
+                <th>Nombre Padre</th>
+                <th>Nombre Madre</th>
+                <th>Fecha Ingreso</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let alumno of alumnos">
+                <td>{{ alumno.nombre_alumno }}</td>
+                <td>{{ alumno.fecha_nacimiento }}</td>
+                <td>{{ alumno.grado }}</td>
+                <td>{{ alumno.nombre_padre }}</td>
+                <td>{{ alumno.nombre_madre }}</td>
+                <td>{{ alumno.fecha_ingreso }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

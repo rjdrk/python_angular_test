@@ -98,5 +98,23 @@ Endpoints Disponibles
 **Headers:**
     API-KEY: tu_api_key_secreta
 
-## Instrucciones de Instalación Backend
+## Instrucciones de Instalación Frontend
+1. Ingresar a la carpeta front-end
 
+   ```bash
+    cd python_angular_test/front-end/app_alumnos
+
+2. Instalar dependencias
+
+    ```bash
+    npm install
+
+3. Configurar el API Key
+    Abre el archivo src/enviroments/enviroments.ts y actualiza la propiedad apiKey:
+
+5. Ejecutar el Servidor de Desarrollo.
+    Inicia el servidor de desarrollo de Angular:
+    ```bash
+    ng serve
+
+La aplicación estará disponible en http://localhost:4200.
